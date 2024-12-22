@@ -39,6 +39,8 @@ struct LoginView: View {
                 VStack {
                     Text("Home screen")
                 }
+                .navigationTitle("Home")
+                .navigationBarBackButtonHidden()
             }
         }
         .padding(.horizontal)
@@ -74,7 +76,7 @@ extension View {
 
 struct NavigationLinkAndDestination<V>: ViewModifier where V: View {
     @Binding var isPresented: Bool
-    @ViewBuilder var destination: () -> V
+    /*@ViewBuilder*/ var destination: () -> V
     
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
