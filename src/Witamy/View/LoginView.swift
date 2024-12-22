@@ -36,9 +36,8 @@ struct LoginView: View {
                 .padding(.top)
             }
             .navigationLinkAndDestination(isPresented: $viewModel.showHomeScreen) {
-                VStack {
-                    Text("Home screen")
-                }
+                    Text("Welcome!")
+                    Text("Authentication is successful")
                 .navigationTitle("Home")
                 .navigationBarBackButtonHidden()
             }
@@ -76,7 +75,7 @@ extension View {
 
 struct NavigationLinkAndDestination<V>: ViewModifier where V: View {
     @Binding var isPresented: Bool
-    /*@ViewBuilder*/ var destination: () -> V
+    var destination: () -> V
     
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
