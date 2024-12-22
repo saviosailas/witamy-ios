@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginView: View {
     @State var username: String = ""
     @State var password: String = ""
     var body: some View {
@@ -40,6 +40,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LoginView()
     }
 }
