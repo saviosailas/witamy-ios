@@ -43,22 +43,46 @@ class LoginViewModel: ObservableObject {
         }.joined(separator: "&")
         let encodedParameters = stringParameters.data(using: .utf8)
         postRequest.httpBody = encodedParameters
+        
         let loginTask = URLSession.shared.dataTask(with: postRequest) { [weak self] data, responseMetaData, error in
             guard let self = self else { return }
-            guard let data = data else {
-                isLoginButtonEnabled = true
-                showAuthenticationError()
-                return
+            guard let data else { showAuthenticationError(); return }
+            let authenticationResponse = try? JSONDecoder().decode(AuthenticationResponse.self, from: data)
+            guard let authenticationResponse else { showAuthenticationError(); return }
+            
+            if authenticationResponse.message == AuthenticationResponse.Message.success.rawValue {
+                DispatchQueue.main.async { [weak self] in
+                    guard let self else { return }
+                    showHomeScreen = true
+                    print(authenticationResponse.message)
+                    print(authenticationResponse.jwt)
+                }
             }
-            DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                isLoginButtonEnabled = true
-                showHomeScreen = true
-            }
-            print("Response: \(String(data: data, encoding: .utf8) ?? "Empty response")")
+            // handle Authentication failure
+            showAuthenticationError()
         }
         loginTask.resume()
     }
     
-    func showAuthenticationError() { }
+    func showAuthenticationError() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            isLoginButtonEnabled = true
+        }
+    }
+    
+    private struct AuthenticationResponse: Decodable {
+        enum Message: String, Decodable {
+            case success = "login successful"
+            case failure = "login failed"
+        }
+        
+        let message: String
+        let jwt: String
+                
+        enum CodingKeys: String, CodingKey {
+            case message
+            case jwt = "jwt_token"
+        }
+    }
 }
