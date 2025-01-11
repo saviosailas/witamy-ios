@@ -36,8 +36,7 @@ struct LoginView: View {
                 .padding(.top)
             }
             .navigationLinkAndDestination(isPresented: $viewModel.showHomeScreen) {
-                    Text("Welcome!")
-                    Text("Authentication is successful")
+                HomeView()
                 .navigationTitle("Home")
                 .navigationBarBackButtonHidden()
             }

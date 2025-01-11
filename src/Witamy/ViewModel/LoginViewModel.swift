@@ -54,6 +54,9 @@ class LoginViewModel: ObservableObject {
                 DispatchQueue.main.async { [weak self] in
                     guard let self else { return }
                     showHomeScreen = true
+                    DispatchQueue.global().async {
+                        UserDefaults.standard.set(authenticationResponse.jwt, forKey: "jwt_token")
+                    }
                     print(authenticationResponse.message)
                     print(authenticationResponse.jwt)
                 }
@@ -70,19 +73,20 @@ class LoginViewModel: ObservableObject {
             isLoginButtonEnabled = true
         }
     }
+}
+
+
+struct AuthenticationResponse: Codable {
+    enum Message: String, Decodable {
+        case success = "login successful"
+        case failure = "login failed"
+    }
     
-    private struct AuthenticationResponse: Decodable {
-        enum Message: String, Decodable {
-            case success = "login successful"
-            case failure = "login failed"
-        }
-        
-        let message: String
-        let jwt: String
-                
-        enum CodingKeys: String, CodingKey {
-            case message
-            case jwt = "jwt_token"
-        }
+    let message: String
+    let jwt: String
+            
+    enum CodingKeys: String, CodingKey {
+        case message
+        case jwt = "jwt_token"
     }
 }
