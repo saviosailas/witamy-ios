@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="M logo.svg"
+   inkscape:export-filename="M logo@87.png"
+   inkscape:export-xdpi="16.309999"
+   inkscape:export-ydpi="16.309999"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="1.0730898"
+     inkscape:cx="221.78945"
+     inkscape:cy="277.23682"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="display:inline;fill:#ffffff;fill-opacity:1"
+       id="rect4"
+       width="319.63776"
+       height="271.17953"
+       x="106.23528"
+       y="111.82661" />
+    <path
+       id="rect1"
+       style="fill:#99cc33;stroke-width:1.88811"
+       d="M 182.97941,77.410983 C 84.040528,77.410983 4.390392,157.06112 4.390392,256 c 0,98.93888 79.650136,178.58902 178.589018,178.58902 h 146.04118 c 98.93888,0 178.58902,-79.65014 178.58902,-178.58902 0,-98.93888 -79.65014,-178.589017 -178.58902,-178.589017 z m 3.11612,66.331067 h 14.54069 l 55.76206,161.6218 51.4511,-161.6218 h 14.37842 l 47.4536,221.49196 H 339.32408 L 311.52235,222.96537 260.39207,368.25795 h -7.98761 L 199.83968,222.96537 172.67592,365.23401 H 142.3186 Z" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke-width:2.092"
+       id="rect3"
+       width="197.52483"
+       height="103.43963"
+       x="-1538.0306"
+       y="-1554.9683"
+       rx="0"
+       ry="0"
+       transform="matrix(0.76485962,-0.64419699,-0.88987439,0.45620563,0,0)"
+       inkscape:transform-center-x="-142.27756"
+       inkscape:transform-center-y="-131.58438" />
+    <ellipse
+       style="fill:#ffffff;fill-opacity:1;stroke-width:0.463839"
+       id="path3"
+       cx="-69.463501"
+       cy="405.84744"
+       rx="19.110743"
+       ry="19.113127"
+       inkscape:transform-center-x="8.6162101"
+       inkscape:transform-center-y="39.757478"
+       transform="matrix(0.26545102,-0.96412435,0.97456389,0.22410987,0,0)" />
+  </g>
+</svg>
