@@ -23,7 +23,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             if (UserDefaults.standard.string(forKey: "jwt_token") ?? "") != "" {
-                window.rootViewController = UIHostingController(rootView: HomeView())
+                let homeView = HomeView()
+                    .navigationTitle("Home")
+                    .navigationBarBackButtonHidden()
+                window.rootViewController = UIHostingController(rootView: homeView)
             } else {
                 window.rootViewController = UIHostingController(rootView: contentView)
             }
