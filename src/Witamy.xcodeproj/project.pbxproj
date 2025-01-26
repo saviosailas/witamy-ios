@@ -13,6 +13,7 @@
 		63CED4202BD419B8005E2CF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CED41F2BD419B8005E2CF9 /* Assets.xcassets */; };
 		63CED4232BD419B8005E2CF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CED4222BD419B8005E2CF9 /* Preview Assets.xcassets */; };
 		63CED4262BD419B8005E2CF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CED4242BD419B8005E2CF9 /* LaunchScreen.storyboard */; };
+		8524AF7A2D45CE1C000DE18D /* InfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8524AF792D45CE1C000DE18D /* InfoCardView.swift */; };
 		85AE5C9B2D19BB0600F79A92 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AE5C9A2D19BB0600F79A92 /* HomeView.swift */; };
 		85E24CD72D173DDF00CE1DFD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E24CD62D173DDF00CE1DFD /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		63CED4222BD419B8005E2CF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		63CED4252BD419B8005E2CF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63CED4272BD419B8005E2CF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8524AF792D45CE1C000DE18D /* InfoCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardView.swift; sourceTree = "<group>"; };
 		85AE5C9A2D19BB0600F79A92 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		85E24CD62D173DDF00CE1DFD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +95,7 @@
 			children = (
 				63CED41D2BD419B5005E2CF9 /* LoginView.swift */,
 				85AE5C9A2D19BB0600F79A92 /* HomeView.swift */,
+				8524AF792D45CE1C000DE18D /* InfoCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				63CED41A2BD419B5005E2CF9 /* AppDelegate.swift in Sources */,
 				63CED41C2BD419B5005E2CF9 /* SceneDelegate.swift in Sources */,
 				85AE5C9B2D19BB0600F79A92 /* HomeView.swift in Sources */,
+				8524AF7A2D45CE1C000DE18D /* InfoCardView.swift in Sources */,
 				63CED41E2BD419B5005E2CF9 /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +319,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Witamy/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Witamy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,6 +340,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Witamy/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Witamy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
