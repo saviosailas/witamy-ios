@@ -9,61 +9,58 @@ import SwiftUI
 struct InfoCardView: View {
     
     @StateObject var viewModel: InfoCardViewModel
-        
+    let border: CGFloat = 0.05
+    
     var body: some View {
-        HStack {
-            HStack(alignment: .center, spacing: 0) {
-                
-                Image(systemName: viewModel.sysImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 26)
-                    .padding(.leading, 5)
-                
-                
-                VStack(alignment: .leading, spacing: 0) {
-                    HStack(alignment: .center) {
-                        Text(viewModel.title)
-                            .font(.title2)
-                        Spacer()
-                        if let date = viewModel.date {
-                            Text(date.formatted(date: .abbreviated, time: .omitted))
-                                .font(.headline)
-                                .foregroundStyle(.white)
-                                .padding(.horizontal, 6)
-                                .padding(.vertical, 2)
-                                .background(.yellow)
-                                .clipShape(Capsule())
-                                .padding(.trailing, 3)
-                        }
-                    }
-                    .padding(.bottom, 8)
-                    Text(viewModel.subtitle)
-                        .font(.subheadline)
-                    
-                } .foregroundStyle(.primary)
-                    .padding(.leading)
-                    .padding(.vertical, 0)
-                    .frame(width: 320, height: 100)
-                
-            }
-            .background(viewModel.background)
-            .compositingGroup()
-            .shadow(color: .gray, radius: 0, x: 0, y: 1)
-            .shadow(color: .gray, radius: 0, x: 0, y: -1)
-            .shadow(color: .gray, radius: 0, x: 1, y: 0)
-            .shadow(color: viewModel.ribonColor, radius: 0, x: -10, y: 0)
-            .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
+        HStack(alignment: .center, spacing: 0) {
             
+            Image(systemName: viewModel.sysImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 26)
+                .padding(.leading, 5)
+            
+            
+            VStack(alignment: .leading, spacing: 0) {
+                HStack(alignment: .center) {
+                    Text(viewModel.title)
+                        .font(.title2)
+                    Spacer()
+                    if let date = viewModel.date {
+                        Text(date.formatted(date: .abbreviated, time: .omitted))
+                            .font(.headline)
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 2)
+                            .background(.yellow)
+                            .clipShape(Capsule())
+                            .padding(.trailing, 3)
+                    }
+                }
+                .padding(.bottom, 8)
+                Text(viewModel.subtitle)
+                    .font(.subheadline)
+                
+            } .foregroundStyle(.primary)
+                .padding(.leading)
+                .padding(.vertical, 0)
+                .frame(width: 320, height: 100)
             
         }
-        
+        .background(viewModel.background)
+        .compositingGroup()
+        .clipShape(RoundedRectangle(cornerRadius: viewModel.cornerRadius))
+        .shadow(color: .gray, radius: 0, x: 0, y: border)
+        .shadow(color: .gray, radius: 0, x: 0, y: -border)
+        .shadow(color: .gray, radius: 0, x: border, y: 0)
+        .shadow(color: viewModel.ribonColor , radius: 0, x: -10, y: 0)
     }
 }
 #Preview {
     ScrollView {
         VStack {
             InfoCardView(viewModel: InfoCardViewModel())
+                .padding(.horizontal)
             InfoCardView(viewModel: InfoCardViewModel())
             InfoCardView(viewModel: InfoCardViewModel())
             InfoCardView(viewModel: InfoCardViewModel())
@@ -71,11 +68,8 @@ struct InfoCardView: View {
             InfoCardView(viewModel: InfoCardViewModel())
             InfoCardView(viewModel: InfoCardViewModel())
         }
+        //        .padding()
     }
-   .shadow(color: .gray, radius: 0, x: 0, y: 1)
-   .shadow(color: .gray, radius: 0, x: 0, y: -1)
-   .shadow(color: .gray, radius: 0, x: 1, y: 0)
-   .shadow(color: .gray, radius: 0, x: -10, y: 0)
 }
 class InfoCardViewModel: ObservableObject {
     @Published var title: String
